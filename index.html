@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="KingOla — Web3 Community Manager, Moderator & Support Specialist. 3+ years building safe, engaged blockchain communities.">
+<meta property="og:title" content="KingOla · Web3 Community Portfolio">
+<meta property="og:description" content="Web3 Community Manager with 123K+ members moderated. Telegram · Discord · Twitter/X · DeFi · NFTs · DAOs">
+<meta property="og:type" content="website">
+<title>KingOla · Web3 Community Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ─────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --ink:    #0b0e11;
+  --paper:  #f5f2eb;
+  --cream:  #ede9e0;
+  --rule:   #d6d0c4;
+  --lead:   #1a1d21;
+  --steel:  #4a5568;
+  --fog:    #8a95a3;
+  --accent: #0f6fff;
+  --gold:   #c9922a;
+  --green:  #0d7c5f;
+  --red:    #c0392b;
+  --glow:   rgba(15,111,255,0.12);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--lead);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ── GRAIN OVERLAY ────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.6;
+}
+
+/* ── MASTHEAD ─────────────────────────────────────────────── */
+.masthead {
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+.masthead-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 40px 56px;
+  position: relative;
+  z-index: 1;
+}
+
+/* diagonal rule decoration */
+.masthead::after {
+  content: '';
+  position: absolute;
+  right: -80px; bottom: -60px;
+  width: 480px; height: 480px;
+  background: conic-gradient(from 30deg, transparent 60%, rgba(15,111,255,0.06) 70%, transparent 80%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.issue-line {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--fog);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex; align-items: center; gap: 12px;
+}
+.issue-line::before {
+  content: '';
+  display: inline-block;
+  width: 28px; height: 1px;
+  background: var(--accent);
+}
+
+.masthead h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 0.95;
+  letter-spacing: -2px;
+  margin-bottom: 8px;
+}
+.masthead h1 span {
+  color: var(--accent);
+}
+
+.masthead-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: #8090a0;
+  margin-top: 20px;
+  max-width: 540px;
+  line-height: 1.6;
+}
+
+.masthead-meta {
+  margin-top: 36px;
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.meta-tag {
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 2px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #7090a8;
+  letter-spacing: 0.5px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.meta-tag:hover { border-color: var(--accent); color: #a0c0e0; }
+
+.masthead-links {
+  margin-top: 40px;
+  display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.3px;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: #0a5ce0; transform: translateY(-1px); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #8090a0;
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.4); color: #c0d0e0; }
+
+/* ── STATS BAR ────────────────────────────────────────────── */
+.stats-bar {
+  background: var(--cream);
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+}
+.stats-inner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+  padding: 24px 20px;
+  border-right: 1px solid var(--rule);
+  position: relative;
+}
+.stat-item:last-child { border-right: none; }
+.stat-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px; font-weight: 900;
+  color: var(--ink);
+  line-height: 1;
+  display: block;
+}
+.stat-val span { color: var(--accent); }
+.stat-lbl {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: var(--fog);
+  text-transform: uppercase; letter-spacing: 1.2px;
+  margin-top: 6px; display: block;
+}
+
+/* ── MAIN LAYOUT ──────────────────────────────────────────── */
+.main {
+  max-width: 1100px; margin: 0 auto;
+  padding: 64px 40px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 60px;
+  position: relative; z-index: 1;
+}
+
+/* ── SECTION HEADERS ──────────────────────────────────────── */
+.section-header {
+  display: flex; align-items: baseline; gap: 14px;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+}
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+}
+.section-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: var(--accent);
+  letter-spacing: 1px;
+}
+
+/* ── PROOF OF WORK CARDS ──────────────────────────────────── */
+.pow-cards { display: flex; flex-direction: column; gap: 2px; margin-bottom: 56px; }
+
+.pow-card {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--ink);
+  padding: 0;
+  overflow: hidden;
+  transition: border-left-color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.pow-card:hover {
+  border-left-color: var(--accent);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+.pow-card-inner { padding: 28px 28px 24px; }
+
+.pow-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: var(--fog);
+  text-transform: uppercase; letter-spacing: 1.8px;
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.pow-eyebrow .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); flex-shrink: 0;
+}
+
+.pow-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3; margin-bottom: 10px;
+}
+.pow-desc {
+  font-size: 14px; color: var(--steel);
+  line-height: 1.7; margin-bottom: 18px;
+}
+.pow-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.pow-tag {
+  padding: 3px 10px;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: var(--steel);
+  letter-spacing: 0.4px;
+}
+
+.pow-footer {
+  border-top: 1px solid var(--cream);
+  padding: 16px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: #fafaf8;
+}
+.pow-stat-mini {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: var(--fog);
+}
+.pow-stat-mini strong { color: var(--ink); }
+
+.pow-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 500; color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  transition: gap 0.2s;
+}
+.pow-link:hover { gap: 10px; }
+.pow-link svg { transition: transform 0.2s; }
+.pow-link:hover svg { transform: translate(2px, -2px); }
+
+/* ── EXPERIENCE TIMELINE ──────────────────────────────────── */
+.timeline { margin-bottom: 56px; }
+.tl-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.tl-item:last-child { border-bottom: none; }
+.tl-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: var(--fog);
+  letter-spacing: 0.5px;
+  padding-top: 4px;
+  text-align: right;
+}
+.tl-content {}
+.tl-role {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; font-weight: 700;
+  color: var(--ink); margin-bottom: 2px;
+}
+.tl-org {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: var(--accent);
+  letter-spacing: 0.8px; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.tl-bullets { list-style: none; }
+.tl-bullets li {
+  font-size: 13.5px; color: var(--steel);
+  line-height: 1.6; margin-bottom: 5px;
+  padding-left: 14px; position: relative;
+}
+.tl-bullets li::before {
+  content: '—';
+  position: absolute; left: 0;
+  color: var(--rule);
+}
+
+/* ── SIDEBAR ──────────────────────────────────────────────── */
+.sidebar { }
+
+.sidebar-card {
+  background: var(--ink);
+  padding: 28px 24px;
+  margin-bottom: 20px;
+  position: relative; overflow: hidden;
+}
+.sidebar-card::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle at top right, rgba(15,111,255,0.15), transparent 70%);
+}
+.sidebar-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px; font-weight: 700;
+  color: #fff; margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.contact-row {
+  display: flex; align-items: flex-start; gap: 10px;
+  margin-bottom: 12px;
+}
+.contact-icon {
+  width: 28px; height: 28px; flex-shrink: 0;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+}
+.contact-icon svg { width: 13px; height: 13px; }
+.contact-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: #50606e;
+  text-transform: uppercase; letter-spacing: 0.8px; display: block;
+}
+.contact-val {
+  font-size: 13px; color: #c0ccd8;
+  word-break: break-all;
+}
+.contact-val a { color: var(--accent); text-decoration: none; }
+.contact-val a:hover { text-decoration: underline; }
+
+.skills-grid {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px;
+}
+.skill-chip {
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: #8090a0;
+  letter-spacing: 0.3px;
+}
+
+.availability-dot {
+  display: inline-block;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #00d97e;
+  margin-right: 6px;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,217,126,0.4); }
+  50% { opacity: 0.8; box-shadow: 0 0 0 5px rgba(0,217,126,0); }
+}
+.avail-text { font-size: 13px; color: #7a9080; }
+.avail-text strong { color: #00d97e; }
+
+/* ── FEATURED QUOTE ───────────────────────────────────────── */
+.featured-quote {
+  background: var(--ink);
+  padding: 40px 48px;
+  margin-bottom: 56px;
+  position: relative;
+  overflow: hidden;
+}
+.featured-quote::before {
+  content: '\201C';
+  position: absolute; top: -20px; left: 24px;
+  font-family: 'Playfair Display', serif;
+  font-size: 180px; font-weight: 900;
+  color: rgba(15,111,255,0.08);
+  line-height: 1; pointer-events: none;
+}
+.featured-quote blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-style: italic;
+  color: #e0e8f0;
+  line-height: 1.5;
+  position: relative; z-index: 1;
+  margin-bottom: 16px;
+}
+.featured-quote cite {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: var(--fog);
+  letter-spacing: 1px; text-transform: uppercase;
+  font-style: normal;
+}
+.featured-quote cite::before { content: '— '; }
+
+/* ── COMPETENCIES ─────────────────────────────────────────── */
+.comp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px; margin-bottom: 56px;
+}
+.comp-item {
+  padding: 18px 20px;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-top: 3px solid transparent;
+  transition: border-top-color 0.2s;
+}
+.comp-item:hover { border-top-color: var(--accent); }
+.comp-name {
+  font-size: 13px; font-weight: 500; color: var(--ink);
+  margin-bottom: 6px;
+}
+.comp-bar-track {
+  height: 3px; background: var(--cream); border-radius: 2px; overflow: hidden;
+}
+.comp-bar-fill {
+  height: 100%; border-radius: 2px; background: var(--accent);
+  transition: width 1s ease;
+}
+
+/* ── RECOGNITION ──────────────────────────────────────────── */
+.recognition-row {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 56px;
+}
+.rec-item {
+  flex: 1; min-width: 160px;
+  padding: 20px 18px;
+  background: #fff; border: 1px solid var(--rule);
+  text-align: center;
+}
+.rec-org {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px; font-weight: 700;
+  color: var(--ink); margin-bottom: 4px;
+}
+.rec-context { font-size: 12px; color: var(--fog); }
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.footer {
+  background: var(--ink);
+  border-top: 3px solid var(--accent);
+  padding: 40px;
+  text-align: center;
+  position: relative; z-index: 1;
+}
+.footer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; font-weight: 900; color: #fff;
+  margin-bottom: 6px;
+}
+.footer-sub { font-size: 13px; color: #506070; margin-bottom: 24px; }
+.footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.footer-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: #506070;
+  text-decoration: none; letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--accent); }
+.footer-copy {
+  margin-top: 32px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: #2a3540;
+  letter-spacing: 0.5px;
+}
+
+/* ── ANIMATIONS ───────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.masthead-inner > * {
+  animation: fadeUp 0.6s ease both;
+}
+.masthead-inner > *:nth-child(1) { animation-delay: 0.05s; }
+.masthead-inner > *:nth-child(2) { animation-delay: 0.15s; }
+.masthead-inner > *:nth-child(3) { animation-delay: 0.25s; }
+.masthead-inner > *:nth-child(4) { animation-delay: 0.35s; }
+.masthead-inner > *:nth-child(5) { animation-delay: 0.45s; }
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .stat-item:nth-child(2) { border-right: none; }
+  .main { grid-template-columns: 1fr; gap: 40px; }
+  .sidebar { order: -1; }
+  .tl-item { grid-template-columns: 1fr; gap: 4px; }
+  .tl-date { text-align: left; }
+  .masthead-inner { padding: 48px 24px 40px; }
+  .main { padding: 40px 24px; }
+  .comp-grid { grid-template-columns: 1fr; }
+  .featured-quote { padding: 28px 28px; }
+}
+@media (max-width: 480px) {
+  .stats-inner { grid-template-columns: 1fr 1fr; padding: 0 20px; }
+}
+
+/* ── PRINT ────────────────────────────────────────────────── */
+@media print {
+  .masthead { background: var(--ink) !important; -webkit-print-color-adjust: exact; }
+  body::before { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ MASTHEAD ══════════════════════════════════════════════ -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="issue-line">Portfolio · Web3 Community · Est. 2022</div>
+    <h1>King<span>Ola</span></h1>
+    <p class="masthead-sub">
+      Web3 Community Manager, Moderator &amp; Support Specialist building
+      safe, educated, and engaged blockchain communities — one thread,
+      one FAQ, and one resolved ticket at a time.
+    </p>
+    <div class="masthead-meta">
+      <span class="meta-tag">Telegram</span>
+      <span class="meta-tag">Discord</span>
+      <span class="meta-tag">Twitter/X</span>
+      <span class="meta-tag">DeFi</span>
+      <span class="meta-tag">NFTs</span>
+      <span class="meta-tag">DAOs</span>
+      <span class="meta-tag">Airdrops</span>
+      <span class="meta-tag">Spam Prevention</span>
+      <span class="meta-tag">FAQ Authoring</span>
+    </div>
+    <div class="masthead-links">
+      <a href="mailto:kingolasblog@gmail.com" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+        Hire Me
+      </a>
+      <a href="https://x.com/Web3KingOla" target="_blank" rel="noopener" class="btn-ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        @Web3KingOla
+      </a>
+      <a href="https://t.me/Web3KingOla" target="_blank" rel="noopener" class="btn-ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.82l-1.672 7.877c-.126.56-.453.697-.917.433l-2.542-1.874-1.227 1.18c-.135.136-.249.249-.511.249l.183-2.582 4.702-4.246c.205-.181-.044-.282-.314-.101L7.836 14.24 5.33 13.46c-.553-.173-.564-.553.116-.818l9.668-3.727c.461-.167.865.113.816.905z"/></svg>
+        Telegram
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ══ STATS BAR ══════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-val">123<span>K+</span></span>
+      <span class="stat-lbl">Members Moderated</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-val">3<span>+</span></span>
+      <span class="stat-lbl">Years Experience</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-val">5</span>
+      <span class="stat-lbl">Active Communities</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-val">12</span>
+      <span class="stat-lbl">Educational Threads</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MAIN CONTENT ══════════════════════════════════════════ -->
+<div class="main">
+  <div class="body-col">
+
+    <!-- PROOF OF WORK -->
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Proof of Work</h2>
+    </div>
+
+    <div class="pow-cards">
+
+      <!-- Card 1: Shieldeum FAQ -->
+      <div class="pow-card">
+        <div class="pow-card-inner">
+          <div class="pow-eyebrow"><span class="dot"></span>Moderation · Documentation · Nov–Dec 2024</div>
+          <h3 class="pow-title">Shieldeum Telegram Mini-App — Beginner FAQ</h3>
+          <p class="pow-desc">
+            During a high-traffic project event on Shieldeum's official Telegram channel,
+            I authored and published a structured Beginner FAQ document covering eligibility,
+            rewards, and participation mechanics for the Mini-App. The FAQ reduced repetitive
+            member queries, enabling self-service support for over 123,000 community members.
+            I simultaneously enforced anti-spam and anti-FUD protocols, managed real-time
+            dispute resolution, and maintained a professional environment throughout a
+            high-stakes project milestone.
+          </p>
+          <div class="pow-tags">
+            <span class="pow-tag">123,000+ Members</span>
+            <span class="pow-tag">FAQ Authoring</span>
+            <span class="pow-tag">Telegram Moderation</span>
+            <span class="pow-tag">Anti-Spam</span>
+            <span class="pow-tag">Real-Time Support</span>
+          </div>
+        </div>
+        <div class="pow-footer">
+          <span class="pow-stat-mini">Community Size: <strong>123,000+ members</strong></span>
+          <a href="YOUR_SHIELDEUM_FAQ_LINK_HERE" target="_blank" class="pow-link" rel="noopener">
+            View FAQ Document
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Twitter/X Thread Series -->
+      <div class="pow-card">
+        <div class="pow-card-inner">
+          <div class="pow-eyebrow"><span class="dot" style="background:#1d9bf0"></span>Content Creation · Twitter/X · Ongoing</div>
+          <h3 class="pow-title">Web3 for Beginners — 12-Part Educational Thread Series</h3>
+          <p class="pow-desc">
+            A 12-part educational thread series on Twitter/X covering wallet setup, blockchain
+            fundamentals, DeFi protocols, NFT ecosystems, DAOs, airdrops, and safe Web3
+            practices. Written for beginners with zero prior crypto knowledge. The series gained
+            organic engagement and was noted by <strong>CTNG</strong> and
+            <strong>The Web3 Jobs Institute</strong> — two recognised voices in the Web3
+            careers space — demonstrating both content quality and reach.
+          </p>
+          <div class="pow-tags">
+            <span class="pow-tag">12 Threads</span>
+            <span class="pow-tag">Blockchain Education</span>
+            <span class="pow-tag">DeFi · NFTs · DAOs</span>
+            <span class="pow-tag">Wallet Setup</span>
+            <span class="pow-tag">Organic Engagement</span>
+            <span class="pow-tag">CTNG Noted</span>
+          </div>
+        </div>
+        <div class="pow-footer">
+          <span class="pow-stat-mini">Platform: <strong>Twitter/X @Web3KingOla</strong></span>
+          <a href="YOUR_TWITTER_THREAD_LINK_HERE" target="_blank" class="pow-link" rel="noopener">
+            Read the Series
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: Crypto Minds Community -->
+      <div class="pow-card">
+        <div class="pow-card-inner">
+          <div class="pow-eyebrow"><span class="dot" style="background:#c9922a"></span>Community Building · Telegram · 2022–Present</div>
+          <h3 class="pow-title">Crypto Minds Community — Founder &amp; Lead Moderator</h3>
+          <p class="pow-desc">
+            Founded and actively manage Crypto Minds, a Web3 educational community of
+            132 members across 5 Telegram groups. Serves as the primary educator and
+            moderator for blockchain beginners — covering DeFi, NFTs, DAOs, airdrops,
+            and Web3 safety practices. All community guidelines are enforced to maintain
+            a spam-free, scam-free environment, and original educational content is
+            produced and published regularly across Telegram and Twitter/X.
+          </p>
+          <div class="pow-tags">
+            <span class="pow-tag">132 Members</span>
+            <span class="pow-tag">5 Telegram Groups</span>
+            <span class="pow-tag">Community Founder</span>
+            <span class="pow-tag">Moderation</span>
+            <span class="pow-tag">Web3 Education</span>
+            <span class="pow-tag">2022–Present</span>
+          </div>
+        </div>
+        <div class="pow-footer">
+          <span class="pow-stat-mini">Active since: <strong>2022</strong></span>
+          <a href="YOUR_CRYPTO_MINDS_LINK_HERE" target="_blank" class="pow-link" rel="noopener">
+            Join the Community
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.pow-cards -->
+
+    <!-- FEATURED QUOTE -->
+    <div class="featured-quote">
+      <blockquote>
+        "Every community I moderate is only as strong as the trust its members
+        place in it. I take that seriously — which is why spam prevention,
+        accurate information, and genuine support are non-negotiable in
+        everything I do."
+      </blockquote>
+      <cite>KingOla, Web3 Community Manager</cite>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-date">2022–Present</div>
+        <div class="tl-content">
+          <div class="tl-role">Owner & Community Moderator</div>
+          <div class="tl-org">Crypto Minds Community</div>
+          <ul class="tl-bullets">
+            <li>Founded and manage a 132-member Web3 community across 5 Telegram groups</li>
+            <li>Produce educational content on DeFi, NFTs, DAOs, and airdrops</li>
+            <li>Enforce community guidelines and maintain a scam-free environment</li>
+            <li>Manage Twitter/X social presence with organic audience engagement</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2025</div>
+        <div class="tl-content">
+          <div class="tl-role">Brand Ambassador</div>
+          <div class="tl-org">Interchained × Elara Wallet</div>
+          <ul class="tl-bullets">
+            <li>Selected as official ambassador for joint ITC × Elara Wallet program</li>
+            <li>Created awareness content across Twitter/X for DeFi and digital ownership</li>
+            <li>Collaborated with 214-member Ambassador HQ community</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Nov–Dec 2024</div>
+        <div class="tl-content">
+          <div class="tl-role">Community Moderator (Telegram)</div>
+          <div class="tl-org">Shieldeum Web3 Project</div>
+          <ul class="tl-bullets">
+            <li>Moderated 123,000+ member channel during high-traffic project event</li>
+            <li>Authored Beginner FAQ for the Shieldeum Telegram Mini-App</li>
+            <li>Resolved eligibility disputes and participation issues in real time</li>
+            <li>Enforced anti-spam and anti-FUD protocols throughout the event</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2023–2024</div>
+        <div class="tl-content">
+          <div class="tl-role">Community Manager</div>
+          <div class="tl-org">Spell Wallet</div>
+          <ul class="tl-bullets">
+            <li>Managed channel administration, member engagement, and content promotion</li>
+            <li>Coordinated with team to align messaging with project objectives</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2023–2024</div>
+        <div class="tl-content">
+          <div class="tl-role">Support Specialist</div>
+          <div class="tl-org">Ceentian Company Ltd.</div>
+          <ul class="tl-bullets">
+            <li>Collaborated with dev team on Google Play Developer Console publishing</li>
+            <li>Executed multi-step technical tasks under structured guidelines</li>
+            <li>Delivered follow-up support to confirm task completion and user satisfaction</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /.timeline -->
+
+    <!-- COMPETENCIES -->
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>Core Competencies</h2>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-item">
+        <div class="comp-name">Community Management &amp; Growth</div>
+        <div class="comp-bar-track"><div class="comp-bar-fill" style="width:92%"></div></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-name">Telegram Moderation</div>
+        <div class="comp-bar-track"><div class="comp-bar-fill" style="width:96%"></div></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-name">FAQ &amp; Documentation Writing</div>
+        <div class="comp-bar-track"><div class="comp-bar-fill" style="width:90%"></div></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-name">User Support &amp; Issue Resolution</div>
+        <div class="comp-bar-track"><div class="comp-bar-fill" style="width:88%"></div></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-name">Educational Content Creation</div>
+        <div class="comp-bar-track"><div class="comp-bar-fill" style="width:87%"></div></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-name">Anti-Spam / Anti-FUD Enforcement</div>
+        <div class="comp-bar-track"><div class="comp-bar-fill" style="width:95%"></div></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-name">DeFi · NFT · DAO Knowledge</div>
+        <div class="comp-bar-track"><div class="comp-bar-fill" style="width:85%"></div></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-name">Twitter/X Social Management</div>
+        <div class="comp-bar-track"><div class="comp-bar-fill" style="width:88%"></div></div>
+      </div>
+    </div>
+
+    <!-- RECOGNITION -->
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Recognition</h2>
+    </div>
+    <div class="recognition-row">
+      <div class="rec-item">
+        <div class="rec-org">CTNG</div>
+        <div class="rec-context">Noted "Web3 for Beginners" thread series for quality and reach</div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-org">The Web3 Jobs Institute</div>
+        <div class="rec-context">Recognised 12-part educational thread on Twitter/X</div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-org">Shieldeum</div>
+        <div class="rec-context">Trusted to moderate 123,000+ member community event</div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-org">Interchained × Elara</div>
+        <div class="rec-context">Officially selected as brand ambassador from competitive pool</div>
+      </div>
+    </div>
+
+  </div><!-- /.body-col -->
+
+  <!-- ══ SIDEBAR ════════════════════════════════════════════ -->
+  <aside class="sidebar">
+
+    <!-- Contact -->
+    <div class="sidebar-card">
+      <h3>Contact</h3>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#506070" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+        </div>
+        <div>
+          <span class="contact-label">Email</span>
+          <span class="contact-val"><a href="mailto:kingolasblog@gmail.com">kingolasblog@gmail.com</a></span>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="#506070"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+        <div>
+          <span class="contact-label">Twitter/X</span>
+          <span class="contact-val"><a href="https://x.com/Web3KingOla" target="_blank">@Web3KingOla</a></span>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="#506070"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.82l-1.672 7.877c-.126.56-.453.697-.917.433l-2.542-1.874-1.227 1.18c-.135.136-.249.249-.511.249l.183-2.582 4.702-4.246c.205-.181-.044-.282-.314-.101L7.836 14.24 5.33 13.46c-.553-.173-.564-.553.116-.818l9.668-3.727c.461-.167.865.113.816.905z"/></svg>
+        </div>
+        <div>
+          <span class="contact-label">Telegram</span>
+          <span class="contact-val"><a href="https://t.me/Web3KingOla" target="_blank">t.me/Web3KingOla</a></span>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#506070" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <span class="contact-label">Location</span>
+          <span class="contact-val" style="color:#8090a0">Lagos, Nigeria · UTC+1</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Availability -->
+    <div class="sidebar-card">
+      <h3>Availability</h3>
+      <p style="font-size:13px;color:#506070;margin-bottom:12px;">
+        <span class="availability-dot"></span>
+        <strong style="color:#00d97e">Open to opportunities</strong>
+      </p>
+      <p class="avail-text">Remote-first · Crypto/stablecoin payment welcome · Immediate start available</p>
+    </div>
+
+    <!-- Skills -->
+    <div class="sidebar-card">
+      <h3>Skills &amp; Platforms</h3>
+      <div class="skills-grid">
+        <span class="skill-chip">Telegram</span>
+        <span class="skill-chip">Discord</span>
+        <span class="skill-chip">Twitter/X</span>
+        <span class="skill-chip">DeFi</span>
+        <span class="skill-chip">NFTs</span>
+        <span class="skill-chip">DAOs</span>
+        <span class="skill-chip">Airdrops</span>
+        <span class="skill-chip">FAQ Writing</span>
+        <span class="skill-chip">Anti-spam</span>
+        <span class="skill-chip">Anti-FUD</span>
+        <span class="skill-chip">Community Growth</span>
+        <span class="skill-chip">Support Tickets</span>
+        <span class="skill-chip">Content Creation</span>
+        <span class="skill-chip">Web3 Education</span>
+        <span class="skill-chip">Ambassador Mgmt</span>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="sidebar-card">
+      <h3>Education</h3>
+      <p style="font-size:13px;color:#8090a0;margin-bottom:4px;font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.8px;">2023–2025</p>
+      <p style="font-size:13px;color:#c0ccd8;margin-bottom:6px;">Blockchain &amp; Web3 Knowledge Program</p>
+      <p style="font-size:12px;color:#50606e;">Web3academia.com — Blockchain fundamentals, DeFi protocols, NFT ecosystems, DAOs, community management</p>
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06);">
+        <p style="font-size:13px;color:#8090a0;margin-bottom:4px;font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.8px;">2023–Present</p>
+        <p style="font-size:13px;color:#c0ccd8;margin-bottom:4px;">Active Community Member</p>
+        <p style="font-size:12px;color:#50606e;">Vyral Community · The Nige Nest</p>
+      </div>
+    </div>
+
+  </aside>
+</div><!-- /.main -->
+
+<!-- ══ FOOTER ════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-name">KingOla</div>
+  <div class="footer-sub">Web3 Community Manager · Moderator · Support Specialist</div>
+  <div class="footer-links">
+    <a href="mailto:kingolasblog@gmail.com">Email</a>
+    <a href="https://x.com/Web3KingOla" target="_blank">Twitter/X</a>
+    <a href="https://t.me/Web3KingOla" target="_blank">Telegram</a>
+    <a href="YOUR_SHIELDEUM_FAQ_LINK_HERE" target="_blank">Shieldeum FAQ</a>
+    <a href="YOUR_TWITTER_THREAD_LINK_HERE" target="_blank">Thread Series</a>
+    <a href="YOUR_CRYPTO_MINDS_LINK_HERE" target="_blank">Crypto Minds</a>
+  </div>
+  <div class="footer-copy">All proof of work is documented and available on request · kingolasblog@gmail.com</div>
+</footer>
+
+</body>
+</html>
